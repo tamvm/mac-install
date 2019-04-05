@@ -6,19 +6,24 @@
 This is a step by step guide which was written by me for myself mostly, with
 the intent to use and update it whenever I install a new mac.
 
-    Note: Those instructions were last applied on a fresh Mountain Lion MacBook Pro.
-
 <a name=top></a>
+## Backup
+
+- SSH keys
+- GPG
+- Project configs
+- gitconfig.secret
+- Wallet
+- Github API Key
+- Heroku Key
+
 ## Contents
 
 * [AppStore](#appstore)
 * [3rd party](#3rdparty)
 * [Keychains](#keychains)
 * [Preview signatures](#preview)
-* [iTunes Music](#itunes)
-* [iPhoto Pictures](#iphoto)
 * [Skype history transfer](#skype)
-* [MySQL](#mysql)
 * [Copy Files](#files)
 * [Preferences](#preferences)
 * [All Descktops Apps](#alldesktopapps)
@@ -31,15 +36,9 @@ the intent to use and update it whenever I install a new mac.
 * [gitconfig](#gitconfig)
 * [ssh](#ssh)
 * [Dotvim](#dotvim)
-* [RVM](#rvm)
+* [Rbenv](#rbenv)
 * [Heroku](#heroku)
 * [Nodejs](#nodejs)
-* [POW](#pow)
-* [Backblaze](#backblaze)
-* [ScanSnap](#scansnap)
-
-* [Copyright](#copy)
-
 
 <a name=appstore></a>
 ## AppStore
@@ -51,55 +50,47 @@ In particular make sure to install Xcode.
 <a name=3rdparty></a>
 ## 3rd party
 
+### Useful apps:
 
-> NOTE: some apps that are not "properly" signed will not start unless you
-> change Gatekeeper preferences. There is a *better* workaround though. Right
-> click and select 'Open', this time you will have an additional optin to open
-> it regardless of the Gatekeeper settings.
+- Numi, MacDown, Viettien Dict, Franz, GoTiengViet, BitDefender, Pdf Exert, Dash, The Unarchiver, TogglDesktop, Twist, Tomato One, Viber, Zoom
 
+### Developer Tools
+* [Xcode](https://developer.apple.com/download/more/)
+
+### General
 * [Dropbox](https://www.dropbox.com)
 * [1Password](https://agilebits.com/onepassword)
 
   > IMPORTANT: Make sure Dropbox finished sync before you open your 1password keychain!
 
 * [Google Chrome](http://www.google.com/chrome/)
-
-  sign into your gmail account to sync prefs
-  (you will need to create a new application specific password if you use 2-phase auth.)
-
-  visit [http://www.google.com/ncr](http://www.google.com/ncr) in every browser
-  you use so that Google will stop redirecting to the stupid local site.
-
 * [Google Drive](https://drive.google.com/start)
 * [Skype](http://skype.com)
-* [LaunchBar 5](http://www.obdev.at/products/launchbar/index.html)
 * [iTerm2](http://www.iterm2.com)
 
-  in Settings/Terminal set 'Unlimited scrollback'
-* [GitX](http://gitx.laullon.com)
+  - in Settings/Terminal set 'Unlimited scrollback'
+  - Turn on Prompt before closing
+  - Map Cmd+S to save in Vim: Preferences > Keys, Add shortcut Cmd + s to 0x117 (F6)
+  - Create n1->n4 profile with random tab colors
 
-  `Right-click -> open` to open it for the first time (its not signed)
+* [GitX](http://gitx.laullon.com)
 
   After that go to menu `GitX/Enable Terminal Usage...` to enable terminal `gitx` command.
 
-* [GrowlNotify](http://growl.info/downloads)
-* [CCMenu](http://ccmenu.sourceforge.net)
-* [Adobe Air](http://get.adobe.com/air/)
-* [HipChat](https://www.hipchat.com)
-* [AppTrap](http://onnati.net/apptrap/)
+* [Fork-git](https://git-fork.com/)
+
+  After that go to menu `GitX/Enable Terminal Usage...` to enable terminal `gitx` command.
+
 * [Postgress.app](http://postgresapp.com)
 
   To create postgres user without a password like in 'regular' postgres installation:
 
         createuser --no-password -h localhost postgres
         echo /Applications/Postgres.app/Contents/MacOS/bin | sudo tee /etc/paths.d/postgres
+
 * [SequelPro](http://www.sequelpro.com)
-* [Transmission](http://www.transmissionbt.com)
 * [VLC](http://www.videolan.org/)
-* [Things](http://culturedcode.com/things/)
-
-  configure 'ctrl-alt-cmd-n' as quick entry with autofill
-
+* [Wunderlist](https://www.wunderlist.com/)
 * [Stanza](http://www.lexcycle.com)
 
   > Note: site seems to be down. copy from old computer's Applications folder
@@ -109,20 +100,7 @@ In particular make sure to install Xcode.
 
   Choose ~/Dropbox/books as the library location
 
-* [AppFresh](http://metaquark.de/appfresh/mac)
-
-* [Evernote Web Clipper](https://evernote.com/webclipper/)
-
-  Install Evernote from App Store first.
-
-* MacUpdate bundle
-
-  From the MacUpdate bundle (stored on s3) install ScreenFlow, KeyCue, Jaksta
-  (licenses are in 1Password)
-
-* [Shortcat](http://shortcatapp.com)
-
-* [Flip4Mac](http://www.telestream.net/flip4mac/overview.htm)
+* [Evernote](https://evernote.com/) & [Skitch](https://evernote.com/intl/vi/products/skitch)
 
 [top](#top)<a name=keychains></a>
 ## Keychains
@@ -138,34 +116,6 @@ like name of the old computer.
  from the old computer.
 
  The keychains from the previous step should let you open it.
-
-[top](#top)<a name=itunes></a>
-## iTunes Music
-
-* quit iTunes on the old computer.
-* open home directory in Finder
-* right click on the Music folder and 'compress' it
-* transfer it to the new computer.
-* unpack into some temp folder
-* remove the **inside content** of your ~/Music folder
-* move the content of the Music folder from the old computer into ~/Music
-* in case your music library was on an external drive - make sure the drive is mounted
-* start iTunes
-
-[top](#top)<a name=iphoto></a>
-## iPhoto Pictures
-
-* simply copy the `~/Pictures/iPhoto Library` to the new computer
-
-[top](#top)<a name=skype></a>
-## Skype history transfer
-
-* make sure you have the same version of Skype on both old and new computers
-* quit Skype on both computers
-* create archive of your skype id directory on the old computer, transfer it
-  and open it at the same place at the new computer. The path is:
-  
-        ~/Library/Application Support/Skype/YOUR_SKYPE_ID
 
 [top](#top)<a name=mysql></a>
 ## MySQL
@@ -208,11 +158,11 @@ Copy the following files over:
 [top](#top)<a name=preferences></a>
 ## Preferences
 
+
 Go to system preferences and adjust the following:
+* Accessability
 
-* Dock
-
-  check "Automatically hide and show the Dock"
+  Enable dragging with Drag Lock on "Mouse & Trackpad/Trackpad Options" with three fingers
 
 * Mission Control
 
@@ -244,18 +194,12 @@ Go to system preferences and adjust the following:
   turn on Firewall
 
 * Keyboard
-
-  in "Modifier Keys" popup switch "Caps Lock" to "Control"
-
+  * Key speed, Delay until repeat: Max
+  * in "Modifier Keys" popup switch "Caps Lock" to "Esc"
+  * Text tab:
+	   * Uncheck auto capitalize
   * Keyboard Shortcuts:
-
-    * turn off "Show Spotlight Window" in spotlight group and
-    * turn on "Select next source in Input menu" in the "Keyboard & Text" group.
-    * turn on "Switch to Desktop .." in "Mission Control"
-
-    * turn on "All controls" for full keyboard access at the bottom of the
-      dialog.
-
+      * turn off "Show Spotlight Window" in spotlight group and
 
 * Trackpad
 
@@ -265,29 +209,6 @@ Go to system preferences and adjust the following:
 
   Setup GMail account
 
-* Sharing
-
-  Choose computer name
-
-* Accessability
-
-  Enable dragging with Drag Lock on "Mouse & Trackpad/Trackpad Options"
-
-[top](#top)<a name=alldesktopapps></a>
-## All Descktops Apps
-
-Change the following apps to be on all descktops:
-
-* Preferences
-* iTunes
-* Contacts
-* Calendar
-* Reminders
-* Skype
-* HipChat
-* 1Password
-* Activity Monitor
-
 [top](#top)<a name=homebrew></a>
 ## Homebrew
 
@@ -295,12 +216,13 @@ Change the following apps to be on all descktops:
 * Install [Xquartz](http://xquartz.macosforge.org/) of at least version 2.7.2
   > NOTE: VERY important to install Xquartz before Homebrew.
 * Install [Homebrew](http://mxcl.github.com/homebrew/).
-* brew install macvim git wget imagemagick aria2 dos2unix watch tree pstree
+* brew install macvim git wget imagemagick aria2 dos2unix watch tree pstree neovim
 * brew install tmux mtr iftop htop-osx gpg2 ctags
-* brew install erlang
+* brew install erlang md5deep ack s3cmd unrar tig the_silver_searcher
 * brew install clojure clojure-contrib leiningen
-* brew install md5deep ack s3cmd unrar
-* brew install tig
+* brew cask install diffmerg java
+* brew tap heroku/brew && brew install heroku
+* brew install the_silver_searche
 
 [top](#top)<a name=etc></a>
 ## /etc git
@@ -379,15 +301,7 @@ and change 770 to 750. then set-persmissions again and verify:
 
     brew install zsh zsh-completions
 
-    git clone git@github.com:astrails/dotzsh .zsh
-    ln -sfn .zsh/zshrc .zshrc
-
-    echo /usr/local/bin/zsh | sudo tee -a /etc/shells
-    chsh -s /usr/local/bin/zsh
-
-    # edit /etc/paths and move /usr/local/bin to the 1st line
-    # also add /usr/local/sbin just as the 2nd line
-    vim /etc/paths
+- https://github.com/sorin-ionescu/prezto
 
 [top](#top)<a name=inconsolata></a>
 ## [Fonts](#fonts)
@@ -401,92 +315,16 @@ and change 770 to 750. then set-persmissions again and verify:
 [top](#top)<a name=dotfiles></a>
 ## Dot files
 
-Fork http://github.com/astrails/dotfiles and make changes to suite your needs.
-You must edit user-gitconfig.
+- https://github.com/tamvm/dotfiles
 
-Then:
+Branch janus_plus, run `./run.sh`
 
-    cd ~
-    git clone YOUR_FORK_LOCATION .dot
-    cd .dot
-    make install
+- https://github.com/remitano/janus-plus
 
-This will install the following:
+[top](#top)<a name=rbenv></a>
+## Rbenv
 
-* ~/.local-after.vim
-* ~/.zsh/local
-* /etc/gitconfig
-* ~/.gitconfig
-
-[top](#top)<a name=gitconfig></a>
-### Gitconfig
-
-Homebrew's git system file is not quite properly set. it points to version
-install dir and not to /usr/local/etc. we will need to link it every git install/upgrade:
-
-First note the path of the system gitconfig file:
-
-    git config --system -l
-
-Link to /etc (use the path from previous command). e.g.:
-
-    # for older versions of git this will be something like
-    sudo ln -sfn /etc/gitconfig /usr/local/Cellar/git/1.7.11.4/etc/
-
-    # for the newer ones:
-    sudo ln -sfn /etc/gitconfig /usr/local/etc/
-
-
-Verify it works:
-
-    git lga
-
-> NOTE: in older versions of brew git system config directory was inside the
-> brew's Cellar, so you had to re-do this every time you installed a new
-> version of git. The latest versions though, use /usr/local/etc/gitconfig
-> instead, so you only need to do it once.
-
-[top](#top)<a name=ssh></a>
-## SSH
-
-Copy your `~/.ssh` directory over from the old system or backup.
-
-## SSH (new system / user)
-
-Generate ssh keys:
-
-    ssh-keygen -t dsa
-
-[top](#top)<a name=dotvim></a>
-## Dotvim
-
-    cd ~
-    git clone https://github.com/astrails/dotvim.git .vim
-    ln -sfn .vim/vimrc .vimrc
-
-    cd .vim
-    make install
-
-
-[top](#top)<a name=rvm></a>
-## RVM
-
-    curl -L https://get.rvm.io | sudo bash -s stable
-
-After the install go to Preferences and add your user to the rvm group. Logout
-and re-login. now you are able to run rvm commands.
-
-    brew install libksba
-
-    rvm install ruby
-
-    brew tap homebrew/dupes
-    brew install apple-gcc42
-
-    rvm install 1.9.2
-
-    CFLAGS="-I/opt/X11/include" rvm install 1.8.7
-
+    https://github.com/rbenv/rbenv#homebrew-on-macos
 
 [top](#top)<a name=heroku></a>
 ## Heroku
@@ -505,29 +343,11 @@ Verify by running
 [top](#top)<a name=nodejs></a>
 ## Nodejs
 
-We will use NVM to install node:
-
-    cd ~
-    git clone git://github.com/creationix/nvm.git .nvm
-
-Open new terminal so that nvm config will load (handled by dotfiles/zsh-local).
-
-Then:
-
-    nvm install v0.8.6
-    nvm alias default v0.8.6
-
-Open new terminal again and verify that `node` works.
-
 Now we need to install a couple of npm modules:
 
     npm install -g coffee-script
     npm install -g js2coffee
 
-[top](#top)<a name=pow></a>
-## POW
-
-    curl get.pow.cx | sh
 
 [top](#top)<a name=backblaze></a>
 ## Backblaze
@@ -544,14 +364,3 @@ Its important to add backblaze directory to timemachine exclusions list
 
     sudo tmutil addexclusion -p /Library/Backblaze.bzpkg
 
-[top](#top)<a name=scansnap></a>
-## ScanSnap
-
-- Download [ScanSnap Manager](http://scansnap.fujitsu.com/g-support/en/)
-  
-  Need to install original software and latest update.
-
-[top](#top)<a name=copy></a>
-## Copyright
-
-© 2012 Vitaly Kushner, Astrails Ltd.
