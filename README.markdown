@@ -218,7 +218,7 @@ Go to system preferences and adjust the following:
 * Install [Homebrew](http://mxcl.github.com/homebrew/).
 * brew install macvim git wget imagemagick aria2 dos2unix watch tree pstree neovim
 * brew install tmux mtr iftop htop-osx gpg2 ctags
-* brew install erlang md5deep ack s3cmd unrar tig the_silver_searcher
+* brew install erlang md5deep ack s3cmd unrar tig the_silver_searcher hub
 * brew install clojure clojure-contrib leiningen
 * brew cask install diffmerg java
 * brew tap heroku/brew && brew install heroku
