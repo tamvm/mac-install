@@ -52,7 +52,7 @@ In particular make sure to install Xcode.
 
 ### Useful apps:
 
-- Numi, MacDown, Viettien Dict, Franz, GoTiengViet, BitDefender, Pdf Exert, Dash, The Unarchiver, TogglDesktop, Twist, Tomato One, Viber, Zoom
+- Numi, MacDown, Viettien Dict, Franz, GoTiengViet, BitDefender, Pdf Exert, Dash, The Unarchiver, TogglDesktop, Twist, Tomato One, Viber, Zoom, Postman
 
 ### Developer Tools
 * [Xcode](https://developer.apple.com/download/more/)
