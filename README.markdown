@@ -16,6 +16,7 @@ the intent to use and update it whenever I install a new mac.
 - Wallet
 - Github API Key
 - Heroku Key
+- zhistory
 
 ## Contents
 
