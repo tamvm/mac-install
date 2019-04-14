@@ -53,7 +53,24 @@ In particular make sure to install Xcode.
 
 ### Useful apps:
 
-- Numi, MacDown, Viettien Dict, Franz, GoTiengViet, BitDefender, Pdf Exert, Dash, The Unarchiver, TogglDesktop, Twist, Tomato One, Viber, Zoom, Postman
+- Numi, MacDown, Viettien Dict, Franz, GoTiengViet, BitDefender, Pdf Exert, Dash, The Unarchiver, TogglDesktop, Twist, Tomato One, Viber, Zoom, Postman, Docker, Spectacle, ClipMenu
+
+#### Shortcuts & Configs:
+- ToogleDesktop 
+
+Ctrl + Opt + Cmd + S
+
+- Numi
+
+Cmd + Shift + =
+
+- ClipMenu
+
+Cmd + Shift + v
+
+- GoTiengViet: 
+
+Shift + Opt + X
 
 ### Developer Tools
 * [Xcode](https://developer.apple.com/download/more/)
